@@ -10,7 +10,7 @@ import { JsonPlaceHolderContext } from './components/JsonPlaceHolderContext/Json
 ReactDOM.render(
   // <Provider store={store}>
     <JsonPlaceHolderContext.Provider value={jsonPlaceHolderApi}>
-      <Router>
+      <Router >
         <App />
       </Router>
     </JsonPlaceHolderContext.Provider>

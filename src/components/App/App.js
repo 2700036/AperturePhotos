@@ -12,7 +12,6 @@ import Loader from '../Loader/Loader';
 import { JsonPlaceHolderContext } from '../JsonPlaceHolderContext/JsonPlaceHolderContext';
 import UsersList from '../UsersList/UsersList';
 
-
 const App = () => {
   const jsonPlaceHolderApi = useContext(JsonPlaceHolderContext);
   const [data, setData] = useState(null);
@@ -29,12 +28,19 @@ const App = () => {
             data && <UsersList users={data} />
             // || <Spinner />
           }
-        </Route>        
-        <Route path='/:userId'>         
-              {data && <AlbumsList data={data} />
-              // || <Spinner />
-        }          
-       </Route>
+        </Route>
+        <Route exact path='/:userId'>
+          {
+            data && <AlbumsList data={data} />
+            // || <Spinner />
+          }
+        </Route>
+        <Route exact path='/:userId/:albumId'>
+          {
+            data && <AlbumsList data={data} />
+            // || <Spinner />
+          }
+        </Route>
 
         <Route path='*'>
           <Redirect to='/' />

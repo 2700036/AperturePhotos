@@ -7,14 +7,15 @@ import './albums-list.css';
 const AlbumsList = ({data}) => {
   const match = useRouteMatch();
   const history = useHistory();
-
   const userId = match.params.userId;
   const albums = data.find(({ id }) => id === +userId).albums;
 
   const albumsElems = albums.map((album)=>{       
     return <Album
     key={album.id}     
-    album={album}             
+    album={album}
+    onAlbumSelected={()=>history.push(`${album.id}`)}
+                 
     />
   });    
     return (
