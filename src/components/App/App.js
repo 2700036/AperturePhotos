@@ -8,9 +8,10 @@ import Popup from '../Popup/Popup';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import withErrorBoundry from '../hocs/withErrorBoundry';
 import './app.css';
-import Loader from '../Loader/Loader';
+import Spinner from '../Spinner/Spinner';
 import { JsonPlaceHolderContext } from '../JsonPlaceHolderContext/JsonPlaceHolderContext';
 import UsersList from '../UsersList/UsersList';
+import PhotosList from '../PhotosList/PhotosList';
 
 const App = () => {
   const jsonPlaceHolderApi = useContext(JsonPlaceHolderContext);
@@ -18,14 +19,15 @@ const App = () => {
   React.useEffect(() => {
     jsonPlaceHolderApi.getData().then((data) => setData(data));
   }, []);
-
+  
+  
   return (
     <>
       <Header />
       <Switch>
         <Route exact path='/'>
           {
-            data && <UsersList users={data} />
+            data && <UsersList data={data} />
             // || <Spinner />
           }
         </Route>
@@ -37,7 +39,13 @@ const App = () => {
         </Route>
         <Route exact path='/:userId/:albumId'>
           {
-            data && <AlbumsList data={data} />
+            data && <PhotosList data={data} />
+            // || <Spinner />
+          }
+        </Route>
+        <Route exact path='/:userId/:albumId/:photoId'>
+          {
+            data && <PhotosList data={data} />
             // || <Spinner />
           }
         </Route>

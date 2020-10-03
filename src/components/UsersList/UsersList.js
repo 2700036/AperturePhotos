@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import './users-list.css';
 
 
-const UsersList = ({users}) => { 
-  const usersElems = users.map(({id, name})=>{       
+const UsersList = ({data}) => { 
+  const usersElems = data.map(({id, name})=>{       
     return (
-      <Link to={`/${id}/`} key={name+id}>
+      <Link to={`${id}/`} key={name+id}>
     <li >
       {name}
     </li>

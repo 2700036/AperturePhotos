@@ -1,0 +1,13 @@
+
+.photos {  
+  padding: 50px 0 36px;  
+}
+
+.photos__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 150px);
+  justify-content: center;
+  grid-gap: 10px;
+  list-style-type: none;  
+  padding: 0;
+}

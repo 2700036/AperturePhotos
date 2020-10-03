@@ -1,20 +1,20 @@
 import React from 'react';
-import { useHistory, useRouteMatch } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import Album from '../Album/Album';
 import './albums-list.css';
 
 
-const AlbumsList = ({data}) => {
-  const match = useRouteMatch();
-  const history = useHistory();
+const AlbumsList = ({data, history, match}) => {
+
+
   const userId = match.params.userId;
   const albums = data.find(({ id }) => id === +userId).albums;
-
+  console.log(history)
   const albumsElems = albums.map((album)=>{       
     return <Album
     key={album.id}     
     album={album}
-    onAlbumSelected={()=>history.push(`${album.id}`)}
+    onAlbumSelected={()=>history.push(`${album.id}/`)}
                  
     />
   });    
@@ -31,4 +31,4 @@ const AlbumsList = ({data}) => {
     );  
 }
 
-export default AlbumsList;
+export default withRouter(AlbumsList);
