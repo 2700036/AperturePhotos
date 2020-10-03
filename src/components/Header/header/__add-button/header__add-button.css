@@ -1,0 +1,22 @@
+.header .header__add-button {
+  width: 150px;
+  height: 50px;
+  background: #44beba;
+  font-size: 32px;
+  transition: 0.3s;
+  cursor: pointer;
+  margin-left: auto;
+  border-radius: 2px;
+}
+
+.header .header__add-button:hover {
+  background: #6DC9C2;
+}
+
+@media screen and (max-width: 740px) {
+  .header .header__add-button {
+    width: 50px;
+    height: 50px;
+  }
+}
+
