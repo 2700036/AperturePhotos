@@ -1,6 +1,7 @@
 
 .albums {  
-  padding: 50px 0 36px;  
+  padding: 50px 0 36px; 
+  position: relative; 
 }
 
 .albums__list {

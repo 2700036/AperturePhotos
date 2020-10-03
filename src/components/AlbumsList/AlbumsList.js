@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Album from '../Album/Album';
+import BackButton from '../BackButton/BackButton';
 import './albums-list.css';
 
 
@@ -21,8 +22,9 @@ const AlbumsList = ({data, history, match}) => {
     return (
      <>
       <main className="content">    
-    <section className="albums">
-      <ul className="albums__list page__section">        
+    <section className="albums page__section">
+    <BackButton>Авторы</BackButton>
+      <ul className="albums__list ">        
       {albumsElems}             
       </ul>
     </section>

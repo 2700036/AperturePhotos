@@ -1,6 +1,7 @@
 
 .photos {  
   padding: 50px 0 36px;  
+  position: relative;
 }
 
 .photos__list {
