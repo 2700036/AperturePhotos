@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory, useRouteMatch, withRouter } from 'react-router-dom';
+import { Link, useHistory, useRouteMatch, withRouter } from 'react-router-dom';
 import BackButton from '../BackButton/BackButton';
 import PhotoThumbnail from '../PhotoThumbnail/PhotoThumbnail';
 
@@ -24,7 +24,9 @@ const PhotosList = ({data, history, match}) => {
      <>
       <main className="content">    
     <section className="photos page__section">
-    <BackButton>Назад</BackButton>
+    <Link to={`/${userId}/`}>
+    <BackButton>Альбомы</BackButton>
+    </Link>
       <ul className="photos__list">        
       {photosElems}             
       </ul>

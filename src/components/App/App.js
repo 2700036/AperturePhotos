@@ -5,7 +5,7 @@ import Footer from '../Footer/Footer';
 
 import Popup from '../Popup/Popup';
 
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import withErrorBoundry from '../hocs/withErrorBoundry';
 import './app.css';
 import Spinner from '../Spinner/Spinner';
@@ -20,7 +20,7 @@ const App = () => {
     jsonPlaceHolderApi.getData().then((data) => setData(data));
   }, []);
   
-  
+  const history = useHistory();
   return (
     <>
       <Header />
@@ -37,13 +37,21 @@ const App = () => {
             // || <Spinner />
           }
         </Route>
-        <Route exact path='/:userId/:albumId'>
+        <Route exact path='/:userId/:albumId/:photoId'>
           {
-            data && <PhotosList data={data} />
+            data && <Popup 
+            data={data}
+            name='name'            
+            onClose={()=>history.goBack()}
+            >
+
+            </Popup>
             // || <Spinner />
           }
         </Route>
-        <Route exact path='/:userId/:albumId/:photoId'>
+        </Switch>
+
+        <Route path='/:userId/:albumId'>
           {
             data && <PhotosList data={data} />
             // || <Spinner />
@@ -53,7 +61,8 @@ const App = () => {
         <Route path='*'>
           <Redirect to='/' />
         </Route>
-      </Switch>
+
+     
 
       <Footer />
     </>

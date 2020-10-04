@@ -38,8 +38,7 @@ const Popup = ({ title, name, onClose, children }) => {
         type='button' 
         className='popup__close'
         onClick={smoothClose}
-        ></button>
-        {title && <h3 className='popup__title'>{title}</h3>}
+        ></button>        
         {children}
       </div>
     </div>

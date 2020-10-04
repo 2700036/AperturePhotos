@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Album from '../Album/Album';
 import BackButton from '../BackButton/BackButton';
 import './albums-list.css';
@@ -23,7 +23,9 @@ const AlbumsList = ({data, history, match}) => {
      <>
       <main className="content">    
     <section className="albums page__section">
+    <Link to='/'>
     <BackButton>Авторы</BackButton>
+    </Link>
       <ul className="albums__list ">        
       {albumsElems}             
       </ul>
