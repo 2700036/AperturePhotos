@@ -1,0 +1,46 @@
+.button {  
+  border: 2px solid #424242cf;
+  border-radius: 3px;
+  padding: 5px 10px;
+  background: #383838;
+  outline: none;
+  color: #ffe49e;
+  cursor: pointer;
+  font-weight: 500;
+  user-select: none;
+  transition: background 0.4s ease, color 0.4s ease, box-shadow 0.1s ease;
+  white-space: nowrap;
+}
+
+.button:hover {
+  background: #ffe49e;
+  color: black;
+}
+
+.button:active {
+  box-shadow: 1px 1px 0px #00000075;
+}
+
+.button_left {
+  position: absolute;  
+  left: 0px;
+  top: 50%;
+  transform: translate(-40px, -50%);
+  border-color: #ffe49e
+}
+.button_right {
+  position: absolute;
+  top: 50%;
+  right: 0px;  
+  transform: translate(40px, -50%);
+  border-color: #ffe49e
+}
+
+@media screen and (max-width: 568px) {
+  .button_left {    
+    transform: translate(10px, -50%);    
+  }
+  .button_right {   
+    transform: translate(-10px, -50%);
+  }
+}

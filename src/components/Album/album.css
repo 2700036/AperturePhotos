@@ -4,7 +4,7 @@
   justify-content: space-between;
   box-sizing: border-box;
   font-family: 'Rubik', Arial, sans-serif;
-  border-radius: 4px;
+  border-radius: 3px;
   color: rgb(255, 241, 223);
   position: relative;
   overflow: hidden;
@@ -18,7 +18,21 @@
   cursor: pointer;
 }
 
-.album:before {
+
+.album:hover  {
+  transform: translate(-10px, -10px);
+  box-shadow: 10px 10px 15px #ff8876;
+}
+.album__title {
+  font-size: 17px;
+  z-index: 5;
+}
+.album__photos {
+  font-size: 15px;
+  z-index: 5;
+}
+
+/* .album:before {
   content: "";
   display: block;  
   width: 100%;
@@ -29,20 +43,8 @@
   left: 0px;
   z-index: 1;
   transition: background 0.5s ease;
-}
+} */
 
-.album:hover  {
-  transform: scale(1.02);
-  box-shadow: 0px 0px 15px #2c2c2c;
-}
-.album:hover.album:before {
+/* .album:hover.album:before {
   background: rgb(0 0 0 / 15%)
-}
-.album__title {
-  font-size: 17px;
- z-index: 5;
-}
-.album__photos {
-  font-size: 15px;
-  z-index: 5;
-}
+} */
