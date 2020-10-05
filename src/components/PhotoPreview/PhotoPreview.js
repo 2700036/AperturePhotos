@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import Button from '../Button/Button';
 import './photo-preview.css';
 
-const PhotoPreview = ({ match, history, data }) => {
+const PhotoPreview = ({ match, data }) => {
   const { userId, albumId, photoId } = match.params;
   const album = data.find(({ id }) => id === +userId)
   .albums.find(({ id }) => id === +albumId).photos;

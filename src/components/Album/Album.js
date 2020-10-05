@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import './album.css';
 
 const Album = ({album: {photos, title, id}, onAlbumSelected}) => {
