@@ -14,7 +14,8 @@ const App = () => {
   const jsonPlaceHolderApi = useContext(JsonPlaceHolderContext);
   const [data, setData] = useState(null);
   React.useEffect(() => {
-    jsonPlaceHolderApi.getData().then((data) => setData(data));
+    jsonPlaceHolderApi.getData().then((data) => setData(data))
+    .catch(err=>console.log(err));
   }, []);
 
   return (
